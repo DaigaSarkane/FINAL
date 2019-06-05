@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\tikzset{every picture/.append style={trim left=-1.8cm}}
+\title{Exam}
+\author{Daiga Sarkane}
+\date{May 2019}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=60mm,
+ top=40mm,
+ right=20mm,
+ }
+\begin{document}
+\rmfamily
+\upshape
+\noindent
+\small
+To express Constraint 2, note that 
+
+\setlength{\parindent}{3ex}
+Total lab time used annually = time used annually to process raw material 
+
+\hspace{5cm}+ time used annually to process Luxury Brute      
+
+\hspace{5cm}+ time used annually to process Luxury Chanelle 
+
+\hspace{4,54cm} = $x_5 + 3x_2 + 2x_4$
+\\
+Then Constraint 2 becomes 
+$$\hspace{5,2cm}3x_2 + 2x_4 + x_5 \leq 6,000 \hspace{4cm}{\textbf{\textcolor{blue}{(56)}}}$$ 
+\\
+After adding the sign restrictions $x_i \geq 0$ (i = 1, 2, 3, 4, 5), many students claim that Rylon should solve the following LP:
+
+\hspace{2,1cm}max $z = 7x_1 + 14_2 + 6x_3 + 10x_4 - 3x_5$
+
+\hspace{2,1cm}s.t \hspace{2cm}$x_5\leq 4,000$
+
+\hspace{3,3cm}$3x_2 + 2x_4 + x_5 \leq6,000$
+
+\hspace{3,3cm}$x_i \geq 0$ \hspace{0,5cm}(i = 1, 2, 3, 4, 5)
+\\
+This formulation is incorrect. Observe that the variables $x_1$ and $x_3$ do not appear in any of the constraints. This means that any point with $x_2 =x_4 = x_5 = 0 $ and $4x_1$ and $x_3$large can yieeld arbitrarily large profits. Thus, this LP is unbounded. Our mistake is that the current formulation does not indicate that the amount of raw material purchased determines the amount of Brute and Chanelle that is available for sale or further processing. More specifically, from Figure 10 (and the fact that 1 oz of processed Brute yields exactly 1 oz of Luxury Brute), it follows that
+
+\setlength{\parindent}{3ex}
+
+Ounces of Regular Brute Sold 
+
++ ounces of Luxury Brute sold = (\underline{ounces of Brute produced})\(
+\begin{pmatrix}
+    pounds of raw \\
+    material purchased
+\end{pmatrix}
+\) = $$3x_5$$
+This relation is reflected in the constraint 
+
+\hspace{3cm}$x_1 + x_2 = 3x_5$ \quad or \quad $x_1 + x_2 = 3x_5 = 0$ \hspace{3cm}{\textbf{\textcolor{blue}{(57)}}}
+Similarly, from Figure 10 it is clear that 
+
+\setlength{\parindent}{5ex}
+Ounces of Regulation Chanelle sold + ounces of Luxury Chanelle sold = $4x_5$
+This relation yields the constraint 
+
+\hspace{3cm}$x_3 + x_4 = 4x_5$ \quad or \quad $x_3 + x_4 - 4x_5 = 0$\hspace{3cm}{\textbf{\textcolor{blue}{(58)}}}
+
+\setlength{\parindent}{3ex}
+Constraints (57) and (58) relate several decisions variables. Students often omit constraints of this type. As this problem shows, leaving out even one constraint may very well 
+
+
+
+
+\begin{tikzpicture}[remember picture, overlay,treenode/.style={rectangle, draw=blue!75, fill=blue!1, very thick, minimum size=6mm},]
+
+\node[treenode]      (upperrectangle)      [below=1cm, right=2cm of dummy] {\textit{$3x_5$ oz Brute}};
+\node[below=0.7cm of upperrectangle]  (dummy) {};
+\node[treenode]      (leftrectangle)       [left=2.3cm of dummy] {\textit{$x_5$ lb Raw material}};
+\node[treenode]      (bottomrectangle)       [below=01cm of dummy] {$4x_5$ oz Chanelle};
+\node[left=5cm of bottomrectangle] {\sffamily\selectfont\textcolor{blue}{FIGURE 10}};
+\node[xshift=4cm,yshift=5cm] at (current page.south west) (text) {\fontfamily{qhv}\selectfont{Production Process for}};
+\node[xshift=4.25cm,yshift=4.6cm] at (current page.south west)  (arcs) {\fontfamily{qhv}\selectfont{Brute and Chanelle}};
+\node[xshift=3cm,yshift=3cm] at (current page.south west){\textbf{\textcolor{blue}{96}}};
+\node[treenode] (uppertriangle) [right=2cm of dummy]{\textit{$x_2$ oz Reg. Brute processed into Lux. Brute}}
+
+
+
+\end{tikzpicture}
+
+\noindent
+\scriptsize
+\\ \\ \\ \\ \\ \\ \\CHAPTER \normalsize \textbf{3} Introduction to Linear Programming
+
+
+\end{document}
+
